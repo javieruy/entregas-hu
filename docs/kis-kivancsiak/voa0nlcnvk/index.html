@@ -1,34 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="hu">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow">
-<title>A hozzáférésed · Kis Kíváncsiak</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Kis Kíváncsiak Enciklopédia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  html, body { margin:0; background:#F6F7F9; color:#20242C; font-family:"Nunito",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
-  .wrap { max-width:560px; margin:0 auto; padding:64px 20px; text-align:center; }
-  .badge { display:inline-block; font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; background:#EAF8EF; color:#178048; padding:6px 12px; border-radius:99px; }
-  h1 { font-family:"Baloo 2","Nunito",sans-serif; font-size:28px; line-height:1.2; margin:18px 0 10px; color:#16233B; }
-  p { font-size:17px; line-height:1.55; color:#20242C; }
-  .card { background:#FFFFFF; border:1px solid #E7E9EE; border-radius:16px; padding:24px 20px; margin-top:28px; }
-  .dot { display:inline-block; width:10px; height:10px; border-radius:50%; background:#1FA35A; margin-right:8px; animation:p 1.6s infinite; }
-  @keyframes p { 50% { opacity:.3; } }
-  @media (prefers-reduced-motion: reduce) { .dot { animation:none; } }
-</style>
+/* HUB DE ENTREGA: la única URL que recibe el comprador. Sin OTOs, sin contactos, noindex. */
+:root{--bg:#F6F7F9;--paper:#FFFFFF;--ink:#20242C;--ink-soft:#6B7280;--accent:#16233B;--accent-dark:#0E1828;--line:#E7E9EE}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--ink)}
+body{font-family:'Nunito',-apple-system,Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Baloo 2',Georgia,serif;line-height:1.15;letter-spacing:-.01em}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+.hero{background:linear-gradient(160deg,var(--accent-dark),var(--accent));color:var(--paper);padding:48px 0 64px;text-align:center}
+.hero .kicker{display:inline-block;border:1px solid rgba(255,255,255,.5);border-radius:99px;padding:5px 14px;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}
+.hero h1{font-size:clamp(28px,6vw,48px);margin-bottom:10px}
+.hero p{font-size:18px;opacity:.93;max-width:640px;margin:0 auto}
+.stats{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:22px}
+.stats span{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);border-radius:99px;padding:8px 16px;font-weight:700;font-size:15px}
+.core{position:relative;margin:-36px auto 36px;background:var(--paper);border:2px solid var(--accent);border-radius:20px;padding:26px;display:grid;grid-template-columns:180px 1fr;gap:24px;align-items:center;box-shadow:0 18px 40px rgba(0,0,0,.10)}
+.core img{width:100%;border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,.18);display:block}
+.core .ph{aspect-ratio:2/3;border-radius:10px;background:linear-gradient(160deg,var(--accent),var(--accent-dark))}
+.tag{display:inline-block;background:var(--accent);color:var(--paper);border-radius:99px;padding:4px 12px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+.core h2{font-size:clamp(22px,4vw,32px);margin-bottom:8px}
+.core p{color:var(--ink-soft);margin-bottom:16px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:12px 26px;border-radius:12px;background:var(--accent);color:var(--paper);font-weight:800;font-size:17px;text-decoration:none;box-shadow:0 4px 0 var(--accent-dark)}
+.btn:hover{filter:brightness(1.05)}
+.sec{margin:0 0 40px}
+.sec h2{font-size:clamp(22px,4vw,30px);margin-bottom:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:8px;text-decoration:none;transition:transform .12s,border-color .12s}
+.card:hover{transform:translateY(-2px);border-color:var(--accent)}
+.card .n{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.card h3{font-size:19px}
+.card p{color:var(--ink-soft);font-size:15px;flex:1}
+.card .go{font-weight:800;color:var(--accent-dark)}
+.card .btn{width:100%;min-height:46px;padding:10px 16px;font-size:16px}
+.acciones{display:inline-flex;flex-direction:column;align-items:stretch}
+.card .acciones{display:flex}
+.ver{display:block;margin-top:10px;font-weight:800;color:var(--accent-dark);text-decoration:none;text-align:center}
+.card .ver{margin-top:8px}
+.pasos{counter-reset:p;list-style:none;display:grid;gap:10px}
+.pasos li{counter-increment:p;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 16px 14px 58px;position:relative}
+.pasos li::before{content:counter(p);position:absolute;left:14px;top:12px;width:32px;height:32px;border-radius:50%;background:var(--accent);color:var(--paper);font-weight:800;display:flex;align-items:center;justify-content:center}
+.foot{text-align:center;color:var(--ink-soft);font-size:13px;padding:10px 0 40px}
+@media (max-width:640px){.core{grid-template-columns:1fr;text-align:center;padding:20px}.core img,.core .ph{max-width:170px;margin:0 auto}.btn{width:100%}.acciones{display:flex}}
+.hero{background:linear-gradient(160deg,#0E1828,#16233B)}.btn,.btn.primary{background:#FFC93C;color:#000;box-shadow:0 4px 0 #E6A800}.btn:hover{background:#FFD45C;filter:none}.tag,.kicker{background:#1FA35A;color:#fff}.card .n{color:#178048}.ver,.card .go,.btn.ghost{color:#178048}.pasos li::before{background:#1FA35A}.core{border-color:#1FA35A}.card .mini{width:100%;aspect-ratio:1/1;object-fit:contain;background:#F6F7F9;border-radius:12px;margin-bottom:4px}.hero .kicker{border-color:transparent}.top{background:#16233B}@media (max-width:640px){.grid .card{display:grid;grid-template-columns:92px 1fr;column-gap:14px;row-gap:4px;align-items:start}.grid .card .mini{grid-row:1/span 3;width:92px;margin:0}.grid .card .acciones,.grid .card .go{grid-column:1/-1}.grid .card p{font-size:14px}.grid .card h3{font-size:18px}}.btn.ghost{box-shadow:none;background:#fff}</style>
 </head>
 <body>
+<header class="hero">
   <div class="wrap">
-    <span class="badge">Sikeres vásárlás</span>
-    <h1>Kis Kíváncsiak Enciklopédia · 11 Illusztrált Könyv + 8 Ajándék Bónusz</h1>
-    <p>Köszönjük! Most fejezzük be az anyagod előkészítését. Ezen az oldalon fogod megtalálni az összes fájlodat.</p>
-    <div class="card">
-      <p><span class="dot"></span><strong>Mentsd el ezt a linket</strong></p>
-      <p>Ez az életre szóló hozzáférésed. Nézz vissza néhány óra múlva, és itt találod a 11 könyvet és az összes bónuszt.</p>
-    </div>
+    <span class="kicker">Üdvözlünk · Kis Kíváncsiak</span>
+    <h1>Kis Kíváncsiak Enciklopédia</h1>
+    <p>11 illusztrált könyv + 8 ajándék bónusz. Töltsd le őket, olvasd együtt a gyermekeddel tableten, vagy nyomtasd ki otthon.</p>
+    <div class="stats"><span>11 könyv</span><span>8 ajándék bónusz</span><span>6–12 éveseknek</span></div>
   </div>
+</header>
+<main class="wrap">
+  <section class="sec" style="margin-top:32px"><h2>A 11 könyv</h2><div class="grid"><div class="card"><img class="mini" src="img/book-physics-520.webp" alt="Fizika egy perc alatt" loading="lazy"><span class="n">1. könyv</span><h3>Fizika egy perc alatt</h3><p>A fizika, gyerekek nyelvén elmagyarázva. Miért esnek le, repülnek vagy robbannak fel a dolgok.</p><div class="acciones"><a class="btn" href="../../kis-kivancsiak/4r2ed8o1ny/kis-kivancsiak-fizika-egy-perc-alatt.pdf" download>⬇ PDF letöltése</a><a class="ver" href="../../kis-kivancsiak/4r2ed8o1ny/" target="_blank" rel="noopener">Megnyitás →</a></div></div><div class="card"><img class="mini" src="img/book-chemistry-520.webp" alt="Kémia egy perc alatt" loading="lazy"><span class="n">2. könyv</span><h3>Kémia egy perc alatt</h3><p>A periódusos rendszer, egyszerűen elmagyarázva. Atomok, keverékek és meglepő reakciók.</p><div class="acciones"><a class="btn" href="../../kis-kivancsiak/2xslvbx5ld/kis-kivancsiak-kemia-egy-perc-alatt.pdf" download>⬇ PDF letöltése</a><a class="ver" href="../../kis-kivancsiak/2xslvbx5ld/" target="_blank" rel="noopener">Megnyitás →</a></div></div><div class="card"><img class="mini" src="img/book-astronomy-520.webp" alt="Csillagászat egy perc alatt" loading="lazy"><span class="n">3. könyv</span><h3>Csillagászat egy perc alatt</h3><p>A Naprendszer, a bolygók és a csillagok. Hogy felnézzen az égre, és megértse, mit lát.</p><div class="acciones"><a class="btn" href="../../kis-kivancsiak/lf9bxu3e7p/kis-kivancsiak-csillagaszat-egy-perc-alatt.pdf" download>⬇ PDF letöltése</a><a class="ver" href="../../kis-kivancsiak/lf9bxu3e7p/" target="_blank" rel="noopener">Megnyitás →</a></div></div><div class="card"><img class="mini" src="img/book-biology-520.webp" alt="Biológia egy perc alatt" loading="lazy"><span class="n">4. könyv</span><h3>Biológia egy perc alatt</h3><p>Az élővilág, a sejttől az erdőig. Sejtek, növények és élőlények.</p><div class="acciones"><a class="btn" href="../../kis-kivancsiak/ytyqw7ojda/kis-kivancsiak-biologia-egy-perc-alatt.pdf" download>⬇ PDF letöltése</a><a class="ver" href="../../kis-kivancsiak/ytyqw7ojda/" target="_blank" rel="noopener">Megnyitás →</a></div></div><div class="card"><img class="mini" src="img/book-geography-520.webp" alt="Földrajz egy perc alatt" loading="lazy"><span class="n">5. könyv</span><h3>Földrajz egy perc alatt</h3><p>Világkörüli utazás, országról országra. Kontinensek, éghajlatok és tájak.</p><div class="acciones"><a class="btn" href="../../kis-kivancsiak/v5849vzoh1/kis-kivancsiak-foldrajz-egy-perc-alatt.pdf" download>⬇ PDF letöltése</a><a class="ver" href="../../kis-kivancsiak/v5849vzoh1/" target="_blank" rel="noopener">Megnyitás →</a></div></div><div class="card"><img class="mini" src="img/book-math-520.webp" alt="Matematika egy perc alatt" loading="lazy"><span class="n">6. könyv</span><h3>Matematika egy perc alatt</h3><p>A számolás is lehet játék. Számok, formák és logika, stressz nélkül.</p><div class="acciones"><a class="btn" href="../../kis-kivancsiak/u43a0j00l1/kis-kivancsiak-matematika-egy-perc-alatt.pdf" download>⬇ PDF letöltése</a><a class="ver" href="../../kis-kivancsiak/u43a0j00l1/" target="_blank" rel="noopener">Megnyitás →</a></div></div><div class="card"><img class="mini" src="img/book-dinosaurs-520.webp" alt="Dinoszauruszok egy perc alatt" loading="lazy"><span class="n">7. könyv</span><h3>Dinoszauruszok egy perc alatt</h3><p>Az óriások, akik uralták a Földet. Kövületek, fajok és meghökkentő tények.</p><div class="acciones"><a class="btn" href="../../kis-kivancsiak/e3hspd0mth/kis-kivancsiak-dinoszauruszok-egy-perc-alatt.pdf" download>⬇ PDF letöltése</a><a class="ver" href="../../kis-kivancsiak/e3hspd0mth/" target="_blank" rel="noopener">Megnyitás →</a></div></div><div class="card"><img class="mini" src="img/book-animals-520.webp" alt="A világ állatai egy perc alatt" loading="lazy"><span class="n">8. könyv</span><h3>A világ állatai egy perc alatt</h3><p>A dzsungeltől az óceánig, fajról fajra. Állatok, amelyekről azt hinnéd, hogy kitalálták őket.</p><div class="acciones"><a class="btn" href="../../kis-kivancsiak/kq212f1niq/kis-kivancsiak-a-vilag-allatai-egy-perc-alatt.pdf" download>⬇ PDF letöltése</a><a class="ver" href="../../kis-kivancsiak/kq212f1niq/" target="_blank" rel="noopener">Megnyitás →</a></div></div><div class="card"><img class="mini" src="img/book-anatomy-520.webp" alt="Anatómia egy perc alatt" loading="lazy"><span class="n">9. könyv</span><h3>Anatómia egy perc alatt</h3><p>A teste, egyszerűen elmagyarázva. Csontok, szervek és érzékek, szakzsargon nélkül.</p><div class="acciones"><a class="btn" href="../../kis-kivancsiak/avlfz5pmvz/kis-kivancsiak-anatomia-egy-perc-alatt.pdf" download>⬇ PDF letöltése</a><a class="ver" href="../../kis-kivancsiak/avlfz5pmvz/" target="_blank" rel="noopener">Megnyitás →</a></div></div><div class="card"><img class="mini" src="img/book-emotions-520.webp" alt="Érzelmek egy perc alatt" loading="lazy"><span class="n">10. könyv</span><h3>Érzelmek egy perc alatt</h3><p>Szavakat adni annak, amit érez. Felismerni az érzelmeit és megtanulni megnyugodni.</p><div class="acciones"><a class="btn" href="../../kis-kivancsiak/xbvsbr5b2o/kis-kivancsiak-erzelmek-egy-perc-alatt.pdf" download>⬇ PDF letöltése</a><a class="ver" href="../../kis-kivancsiak/xbvsbr5b2o/" target="_blank" rel="noopener">Megnyitás →</a></div></div><div class="card"><img class="mini" src="img/book-history-520.webp" alt="Nagy személyiségek egy perc alatt" loading="lazy"><span class="n">11. könyv</span><h3>Nagy személyiségek egy perc alatt</h3><p>Életek, amelyek nagy álmokra ösztönöznek. Akik megváltoztatták a világot, igazi kalandokként elmesélve.</p><div class="acciones"><a class="btn" href="../../kis-kivancsiak/mh7v9y1mwm/kis-kivancsiak-nagy-szemelyisegek-egy-perc-alatt.pdf" download>⬇ PDF letöltése</a><a class="ver" href="../../kis-kivancsiak/mh7v9y1mwm/" target="_blank" rel="noopener">Megnyitás →</a></div></div></div></section>
+  <section class="sec"><h2>A 8 ajándék bónuszod</h2><div class="grid"><a class="card" href="../../kis-kivancsiak/otet8loqak/" target="_blank" rel="noopener"><img class="mini" src="img/bonus-lifetime-520.webp" alt="Élethosszig tartó hozzáférés a frissítésekhez" loading="lazy"><span class="n">1. bónusz</span><h3>Élethosszig tartó hozzáférés a frissítésekhez</h3><p>A hozzáférésed nem jár le: ezt az oldalt bármikor újra megnyithatod, és mindent újra letölthetsz.</p><span class="go">Megnyitás →</span></a><div class="card"><img class="mini" src="img/bonus-jokes-520.webp" alt="A Viccek Könyve" loading="lazy"><span class="n">2. bónusz</span><h3>A Viccek Könyve</h3><p>120 vicc és találós kérdés nyolc témában, a közös nevetéshez.</p><div class="acciones"><a class="btn" href="../../kis-kivancsiak/8yfa3f4soa/kis-kivancsiak-bonusz-2-a-viccek-konyve.pdf" download>⬇ PDF letöltése</a><a class="ver" href="../../kis-kivancsiak/8yfa3f4soa/" target="_blank" rel="noopener">Megnyitás →</a></div></div><div class="card"><img class="mini" src="img/bonus-stories-520.webp" alt="20 varázslatos történet" loading="lazy"><span class="n">3. bónusz</span><h3>20 varázslatos történet</h3><p>20 esti mese egy kis tudománnyal és tanulsággal, mindegyik végén egy beszélgetésindító kérdéssel.</p><div class="acciones"><a class="btn" href="../../kis-kivancsiak/ofbgab0bxf/kis-kivancsiak-bonusz-3-20-varazslatos-tortenet.pdf" download>⬇ PDF letöltése</a><a class="ver" href="../../kis-kivancsiak/ofbgab0bxf/" target="_blank" rel="noopener">Megnyitás →</a></div></div><div class="card"><img class="mini" src="img/bonus-cardtricks-520.webp" alt="27 kártyatrükk" loading="lazy"><span class="n">4. bónusz</span><h3>27 kártyatrükk</h3><p>27 bűvésztrükk egy pakli francia kártyával, lépésről lépésre.</p><div class="acciones"><a class="btn" href="../../kis-kivancsiak/q3uk6hxyhg/kis-kivancsiak-bonusz-4-27-kartyatrukk.pdf" download>⬇ PDF letöltése</a><a class="ver" href="../../kis-kivancsiak/q3uk6hxyhg/" target="_blank" rel="noopener">Megnyitás →</a></div></div><div class="card"><img class="mini" src="img/bonus-handbook-520.webp" alt="A Kis Tudós Kézikönyve" loading="lazy"><span class="n">5. bónusz</span><h3>A Kis Tudós Kézikönyve</h3><p>Hogyan gondolkodik egy igazi tudós? Tudományos módszer, biztonsági szabályok, 40 szavas szótár, megfigyelési naplók és kísérleti jegyzőkönyvek.</p><div class="acciones"><a class="btn" href="../../kis-kivancsiak/fdj5q5fqp0/kis-kivancsiak-bonusz-5-a-kis-tudos-kezikonyve.pdf" download>⬇ PDF letöltése</a><a class="ver" href="../../kis-kivancsiak/fdj5q5fqp0/" target="_blank" rel="noopener">Megnyitás →</a></div></div><div class="card"><img class="mini" src="img/bonus-experiments-520.webp" alt="100 otthon elvégezhető tudományos kísérlet" loading="lazy"><span class="n">6. bónusz</span><h3>100 otthon elvégezhető tudományos kísérlet</h3><p>100 igazi kísérlet otthoni anyagokból, mindegyik hat lépésfotóval.</p><div class="acciones"><a class="btn" href="../../kis-kivancsiak/k971xywzls/kis-kivancsiak-bonusz-6-100-otthon-elvegezheto-tudomanyos-kiserlet.pdf" download>⬇ PDF letöltése</a><a class="ver" href="../../kis-kivancsiak/k971xywzls/" target="_blank" rel="noopener">Megnyitás →</a></div></div><div class="card"><img class="mini" src="img/bonus-engineers-520.webp" alt="Kis Mérnökök" loading="lazy"><span class="n">7. bónusz</span><h3>Kis Mérnökök</h3><p>20 építős projekt kartonból és otthoni anyagokból: híd, torony, daru, katapult és még sok más.</p><div class="acciones"><a class="btn" href="../../kis-kivancsiak/fnpol0bewc/kis-kivancsiak-bonusz-7-kis-mernokok.pdf" download>⬇ PDF letöltése</a><a class="ver" href="../../kis-kivancsiak/fnpol0bewc/" target="_blank" rel="noopener">Megnyitás →</a></div></div><div class="card"><img class="mini" src="img/bonus-certificate-520.webp" alt="A Kis Tudós Oklevele" loading="lazy"><span class="n">8. bónusz</span><h3>A Kis Tudós Oklevele</h3><p>Nyomtatható oklevél a kis tudósnak, amelyre a nevét is ráírhatod.</p><div class="acciones"><a class="btn" href="../../kis-kivancsiak/x0k6jk82tw/kis-kivancsiak-bonusz-8-a-kis-tudos-oklevele.pdf" download>⬇ PDF letöltése</a><a class="ver" href="../../kis-kivancsiak/x0k6jk82tw/" target="_blank" rel="noopener">Megnyitás →</a></div></div></div></section>
+  <section class="sec"><h2>Következő lépés</h2><ol class="pasos"><li>Mentsd el ezt az oldalt a könyvjelzők közé: ez az élethosszig tartó hozzáférésed.</li><li>Töltsd le a 11 könyvet és a bónuszokat a telefonodra, a tabletedre vagy a számítógépedre.</li><li>Kezdjétek azzal a témával, amelyről a gyermeked a legtöbbet kérdez: minden fogalom egy perc alatt elolvasható.</li><li>A könyvek végén lévő kvízzel és villámkérdésekkel ellenőrizhetitek, mit tanultatok.</li></ol></section>
+  <p class="foot">Saját, családi használatra. Továbbértékesítése és megosztása tilos.</p>
+</main>
 </body>
 </html>

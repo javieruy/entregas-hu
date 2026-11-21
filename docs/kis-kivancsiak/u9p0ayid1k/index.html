@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Meglepetés a Mikulástól, a gyermeked nevével · Kis Kíváncsiak</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F6F7F9;--paper:#FFFFFF;--ink:#20242C;--soft:#6B7280;--navy:#16233B;--green:#1FA35A;--green-dark:#178048;--green-soft:#EAF8EF;--yellow:#FFC93C;--yellow-dark:#E6A800;--line:#E7E9EE;--red:#E8395B}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--ink)}
+body{font-family:'Nunito',-apple-system,Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Baloo 2','Nunito',sans-serif;line-height:1.15;color:var(--navy)}
+a{color:inherit}
+.top{background:var(--navy);color:#fff;text-align:center;padding:11px 16px;font-family:'Baloo 2',sans-serif;font-weight:700;font-size:15px}
+.wrap{max-width:1000px;margin:0 auto;padding:28px 16px 56px}
+.head{text-align:center;margin-bottom:26px}
+.kicker{display:inline-block;background:var(--green);color:#fff;padding:6px 14px;border-radius:99px;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+.head h1{font-size:clamp(26px,5.5vw,40px);margin-bottom:10px}
+.head p{color:var(--soft);font-size:17px;max-width:640px;margin:0 auto}
+.sec{margin-top:34px}
+.sec>h2{font-size:clamp(22px,4vw,30px);margin-bottom:6px}
+.sec>p.lead{color:var(--soft);margin-bottom:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:8px}
+.card h3{font-size:19px}
+.card .meta{color:var(--soft);font-size:14px;flex:1}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:10px 18px;border-radius:12px;background:var(--yellow);color:#000;font-weight:800;font-size:16px;text-decoration:none;border:0;cursor:pointer;box-shadow:0 4px 0 var(--yellow-dark);font-family:inherit}
+.btn:hover{background:#FFD45C}
+.btn.sec2{background:var(--paper);color:var(--navy);box-shadow:none;border:2px solid var(--line)}
+.ver{display:block;text-align:center;font-weight:800;color:var(--green-dark);text-decoration:none;margin-top:2px}
+.foot{text-align:center;color:var(--soft);font-size:13px;margin-top:36px}
+
+.form{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px;display:grid;gap:12px;max-width:640px;margin:0 auto}
+.form label{font-weight:800;color:var(--navy);display:grid;gap:6px}
+.form input,.form select{font:inherit;font-size:17px;padding:12px 14px;border:2px solid var(--line);border-radius:12px;background:#fff;color:var(--ink);width:100%}
+.form input:focus,.form select:focus{outline:none;border-color:var(--green)}
+.papir{background:#FFFDF7;border:1px solid var(--line);border-radius:6px;box-shadow:0 10px 30px rgba(22,35,59,.10);margin:0 auto;position:relative}
+.level{max-width:640px;padding:44px 40px 36px;border-top:10px solid var(--red)}
+.level .fej{font-family:'Baloo 2',sans-serif;color:var(--red);font-weight:800;font-size:14px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:18px}
+.level .meg{font-family:'Baloo 2',sans-serif;font-size:30px;color:var(--navy);margin-bottom:12px}
+.level p{font-size:17px;margin-bottom:12px}
+.level .alair{white-space:pre-line;font-family:'Baloo 2',sans-serif;font-size:22px;color:var(--navy);text-align:right;margin-top:18px}
+.okl{max-width:880px;padding:16px;display:flex}
+@media (min-width:700px){.okl{aspect-ratio:297/210;padding:4%}}
+.okl .keret{border:6px double var(--yellow-dark);border-radius:10px;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:4% 6%;gap:6px}
+.okl .o1{font-family:'Baloo 2',sans-serif;font-weight:800;letter-spacing:.2em;color:var(--red);font-size:clamp(14px,2.4vw,22px)}
+.okl .o2{font-family:'Baloo 2',sans-serif;color:var(--navy);font-size:clamp(20px,4vw,38px);line-height:1.1}
+.okl .o3{color:var(--soft);font-size:clamp(13px,1.8vw,17px)}
+.okl .nev{font-family:'Baloo 2',sans-serif;color:var(--green-dark);font-size:clamp(26px,5.5vw,52px);line-height:1.1;border-bottom:2px solid var(--line);min-width:60%;padding:0 12px}
+.okl .o4{font-size:clamp(13px,1.8vw,17px);max-width:80%}
+.okl .ala{margin-top:4%;font-family:'Baloo 2',sans-serif;color:var(--navy);font-size:clamp(16px,2.4vw,22px);border-top:1px solid var(--navy);padding-top:4px;min-width:30%}
+.okl .mar{font-size:11px;letter-spacing:.14em;color:var(--soft);font-weight:800}
+.nyomt{display:flex;justify-content:center;margin:14px auto 0;max-width:320px}
+@page{size:A4 portrait;margin:14mm}
+@page fekvo{size:A4 landscape;margin:10mm}
+@media print{
+  html,body{background:#fff}.wrap{padding:0;max-width:none}.top,.head,.form,.nyomt,.foot,.sec.dl,.sec>h2,.sec>p.lead,#hanguzenet{display:none!important}
+  .sec{margin:0}.papir{box-shadow:none;border:0;max-width:none}
+  body.p-level #okl-sec,body.p-okl #level-sec{display:none!important}
+  .level{border-top:10px solid var(--red);padding:10mm 8mm}
+  body.p-okl main{page:fekvo}
+  .okl{width:100%;aspect-ratio:auto;height:180mm;padding:0;break-inside:avoid}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+
+</style>
+</head>
+<body>
+<div class="top">Kis Kíváncsiak</div>
+<main class="wrap">
+<div class="head"><span class="kicker">Kiegészítő</span><h1>Meglepetés a Mikulástól, a gyermeked nevével</h1><p>Levél a Mikulástól és oklevél a jó gyerekek hivatalos listájáról, a gyermeked nevével, nyomtatásra készen.</p></div>
+<section class="sec"><h2>Személyre szabva</h2><p class="lead">Írd be a gyermeked nevét, válaszd ki, mi volt idén különleges, és nyomtasd ki a levelet és az oklevelet.</p>
+<div class="form">
+<label>A gyermeked neve<input id="nev" type="text" maxlength="40" autocomplete="off" placeholder="Például: Panni"></label>
+<label>Mi volt idén különleges?<select id="kul"><option value="0">megtanultál egyedül olvasni.</option><option value="1">sokat segítettél otthon.</option><option value="2">nagyon kedves voltál a testvéreddel.</option><option value="3">bátran elkezdted az iskolát.</option><option value="4">új barátokat szereztél.</option><option value="5">kitartóan gyakoroltál, és sokat fejlődtél.</option><option value="6">vigyáztál az állatokra és a természetre.</option><option value="7">bátran kipróbáltál valami újat.</option><option value="8">szépen rendben tartottad a szobádat.</option><option value="9">sokat kérdeztél, és rengeteg új dolgot tanultál.</option></select></label>
+</div></section>
+<section class="sec" id="hanguzenet" hidden><!-- pendiente: audio de Mikulás (biblioteca ElevenLabs). No mostrar hasta que exista. --></section>
+<section class="sec" id="level-sec"><h2>A levél</h2>
+<div class="papir level"><div class="fej">Levél a Mikulástól</div><div class="meg" id="meg"></div><p data-par="0">Itt ülök az asztalomnál, a kandalló mellett, és rád gondolok. A segítőim és a kis robot barátom egész évben figyeltek, és sok jó hírt hoztak rólad.</p><p data-par="1">Idén különösen büszke vagyok rád, mert {KULONLEGES}</p><p data-par="2">Tudom, hogy néha nehéz volt, és nem minden sikerült elsőre. De te nem adtad fel, és ez a legfontosabb. Maradj ilyen kíváncsi, kedves és bátor!</p><p data-par="3">Hamarosan útra kelek a rénszarvasaimmal. Tedd ki szépen kitisztított csizmádat az ablakba, és aludj jól!</p><div class="alair">Szeretettel ölel:
+a Mikulás</div></div>
+<div class="nyomt"><button type="button" class="btn" id="p-level">🖨 Levél nyomtatása</button></div></section>
+<section class="sec" id="okl-sec"><h2>Az oklevél</h2>
+<div class="papir okl"><div class="keret"><div class="o1">OKLEVÉL</div><div class="o2">A jó gyerekek hivatalos listája</div>
+<div class="o3">Ezennel igazolom, hogy</div><div class="nev" id="okl-nev"></div><div class="o4">felkerült a jó gyerekek hivatalos listájára, mert egész évben kedves, segítőkész és bátor volt.</div>
+<div class="ala">a Mikulás</div><div class="mar">KIS KÍVÁNCSIAK</div></div></div>
+<div class="nyomt"><button type="button" class="btn" id="p-okl">🖨 Oklevél nyomtatása</button></div></section><section class="sec dl"><h2>Üres változatok, kézzel kitöltéshez</h2><p class="lead">Nyomtasd ki őket, és írd rá kézzel a nevet és azt, ami idén különleges volt.</p><div class="grid"><div class="card"><h3>Levél a Mikulástól (üres, kézzel kitölthető)</h3><p class="meta">1 oldal · PDF</p><a class="btn" href="kis-kivancsiak-level-a-mikulastol.pdf" download>⬇ PDF letöltése</a><a class="ver" href="kis-kivancsiak-level-a-mikulastol.pdf" target="_blank" rel="noopener">Megnyitás →</a></div><div class="card"><h3>Oklevél · A jó gyerekek hivatalos listája (üres)</h3><p class="meta">1 oldal · PDF</p><a class="btn" href="kis-kivancsiak-oklevel-a-jo-gyerekek-hivatalos-listajarol.pdf" download>⬇ PDF letöltése</a><a class="ver" href="kis-kivancsiak-oklevel-a-jo-gyerekek-hivatalos-listajarol.pdf" target="_blank" rel="noopener">Megnyitás →</a></div></div></section><p class="foot">Saját, családi használatra. Továbbértékesítése és megosztása tilos.</p>
+</main>
+<script type="application/json" id="datos">{"meg": "Kedves {NEV}!", "par": ["Itt ülök az asztalomnál, a kandalló mellett, és rád gondolok. A segítőim és a kis robot barátom egész évben figyeltek, és sok jó hírt hoztak rólad.", "Idén különösen büszke vagyok rád, mert {KULONLEGES}", "Tudom, hogy néha nehéz volt, és nem minden sikerült elsőre. De te nem adtad fel, és ez a legfontosabb. Maradj ilyen kíváncsi, kedves és bátor!", "Hamarosan útra kelek a rénszarvasaimmal. Tedd ki szépen kitisztított csizmádat az ablakba, és aludj jól!"], "kul": ["megtanultál egyedül olvasni.", "sokat segítettél otthon.", "nagyon kedves voltál a testvéreddel.", "bátran elkezdted az iskolát.", "új barátokat szereztél.", "kitartóan gyakoroltál, és sokat fejlődtél.", "vigyáztál az állatokra és a természetre.", "bátran kipróbáltál valami újat.", "szépen rendben tartottad a szobádat.", "sokat kérdeztél, és rengeteg új dolgot tanultál."], "nevnelkul": "kis barátom"}</script>
+<script>
+(function(){
+var D=JSON.parse(document.getElementById('datos').textContent);
+var nev=document.getElementById('nev'), kul=document.getElementById('kul');
+function get(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function set(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+if(get('kk-nev')) nev.value=get('kk-nev'); if(get('kk-kul')) kul.value=get('kk-kul');
+function frissit(){
+  var n=nev.value.trim().replace(/\s+/g,' '); var k=D.kul[+kul.value]||D.kul[0];
+  document.getElementById('meg').textContent=D.meg.replace('{NEV}',n||D.nevnelkul);
+  D.par.forEach(function(p,i){var el=document.querySelector('[data-par="'+i+'"]'); if(el) el.textContent=p.replace('{KULONLEGES}',k)});
+  document.getElementById('okl-nev').textContent=n||'\u00a0';
+  set('kk-nev',nev.value); set('kk-kul',kul.value);
+}
+nev.addEventListener('input',frissit); kul.addEventListener('change',frissit); frissit();
+function nyomtat(c){document.body.classList.add(c); window.print(); setTimeout(function(){document.body.classList.remove(c)},500)}
+document.getElementById('p-level').onclick=function(){nyomtat('p-level')};
+document.getElementById('p-okl').onclick=function(){nyomtat('p-okl')};
+})();
+</script>
+</body>
+</html>
