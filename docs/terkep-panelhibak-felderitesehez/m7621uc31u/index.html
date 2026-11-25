@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!-- HUB DE ENTREGA DEL UPSELL 2 (Rita, 2026-11-25). Hub aparte, solo para quien compra el upsell: no toca el hub del producto principal.
+     Lo arma armar_hub_upsell2.py desde idiomas/<xx>/hub.<xx>.json + ui.<xx>.json (títulos) + paginas/textos/u2-<xx>.json (etiquetas) + textos/ de Pepa.
+     Copia de upsell1/plantillas/hub-upsell1.html, mismo estilo y paleta.
+     Sin OTO, sin contactos, noindex. Descarga primero en cada tarjeta (memoria/descarga-primero-en-el-hub.md).
+     El bloque marcado «bono» (comentarios de apertura y cierre) se repite una vez por bono. -->
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>A te hozzáférésed · 120 vizuális térkép elektronikai panelek hibáinak felderítéséhez</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@600&display=swap&subset=cyrillic" rel="stylesheet">
+<style>
+  :root { --bg:#FAF8F5; --dark:#24282F; --alt:#F2F3F7; --ink:#222329; --soft:#686B71; --accent:#2A77BF; --accent-dark:#1F5C95; --gold:#F6CC73; --green:#20835A; --line:rgba(34,35,41,.16); }
+  * { box-sizing:border-box; }
+  html, body { margin:0; background:var(--bg); color:var(--ink); font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; line-height:1.5; -webkit-font-smoothing:antialiased; }
+  h1, h2, h3 { font-family:Montserrat,Inter,sans-serif; font-weight:600; line-height:1.22; margin:0; font-feature-settings:"locl" 0; } /* sin las formas búlgaras cursivas: igual que las tapas y los PDF */
+  img { display:block; max-width:100%; height:auto; }
+  .wrap { max-width:880px; margin:0 auto; padding:0 16px; }
+  .hero { background:var(--dark); color:#fff; text-align:center; padding:40px 0 72px; }
+  .badge { display:inline-block; font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:#fff; background:var(--green); padding:6px 14px; border-radius:99px; }
+  .hero h1 { font-size:clamp(22px,5vw,32px); margin:18px auto 12px; max-width:720px; }
+  .hero p { color:#D9DBE0; font-size:17px; margin:0 auto; max-width:600px; }
+  .stats { display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin-top:20px; }
+  .stats span { border:1px solid rgba(246,204,115,.6); color:var(--gold); border-radius:99px; padding:6px 14px; font-weight:700; font-size:15px; }
+  .core { background:#fff; border:2px solid var(--accent); border-radius:18px; margin:-44px 0 36px; overflow:hidden; box-shadow:0 16px 36px rgba(0,0,0,.10); }
+  .core .tapa { background:var(--alt); }
+  .core .cuerpo { padding:20px 18px 22px; }
+  .tag { display:inline-block; font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); margin-bottom:6px; }
+  .core h2 { font-size:clamp(20px,4vw,26px); margin-bottom:8px; }
+  .core p { color:var(--soft); margin:0 0 16px; }
+  .btn { display:flex; align-items:center; justify-content:center; width:100%; min-height:54px; padding:12px 20px; border-radius:12px; background:var(--accent); color:#fff; font-weight:700; font-size:18px; text-decoration:none; box-shadow:0 4px 0 var(--accent-dark); }
+  .btn:hover, .btn:focus-visible { background:var(--accent-dark); }
+  .abrir { display:block; text-align:center; margin-top:12px; font-size:15px; font-weight:600; color:var(--accent); text-decoration:none; }
+  .meta { display:block; text-align:center; margin-top:6px; font-size:13px; color:var(--soft); }
+  .sec { margin:0 0 36px; }
+  .sec > h2 { font-size:clamp(20px,4vw,26px); margin-bottom:14px; }
+  .grid { display:grid; grid-template-columns:1fr; gap:14px; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:16px; padding:16px; display:grid; grid-template-columns:96px 1fr; gap:14px; align-items:start; }
+  .card img { border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,.14); }
+  .card .n { font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--accent); }
+  .card h3 { font-size:17px; margin:4px 0 6px; }
+  .card p { color:var(--soft); font-size:15px; margin:0; }
+  .card .acciones { grid-column:1 / -1; }
+  .card .btn { min-height:50px; font-size:17px; }
+  .pasos { list-style:none; counter-reset:p; margin:0; padding:0; display:grid; gap:10px; }
+  .pasos li { counter-increment:p; position:relative; background:#fff; border:1px solid var(--line); border-radius:14px; padding:14px 16px 14px 58px; }
+  .pasos li::before { content:counter(p); position:absolute; left:14px; top:12px; width:32px; height:32px; border-radius:50%; background:var(--accent); color:#fff; font-weight:700; display:flex; align-items:center; justify-content:center; }
+  .nota { background:var(--alt); border-radius:16px; padding:18px; margin-bottom:12px; }
+  .nota h3 { font-size:17px; margin-bottom:6px; }
+  .nota p { margin:0; color:var(--soft); }
+  .nota .ver { display:inline-block; margin-top:10px; font-size:13px; font-weight:700; color:var(--green); }
+  .proximo { background:var(--dark); color:#fff; border-radius:16px; padding:22px 18px; }
+  .proximo h2 { color:var(--gold); font-size:22px; margin-bottom:8px; }
+  .proximo p { margin:0; color:#E6E7EA; }
+  .pie { text-align:center; color:var(--soft); font-size:13px; padding:28px 0 40px; }
+  @media (min-width:700px) {
+    .core { display:grid; grid-template-columns:1.1fr 1fr; align-items:center; }
+    .core .tapa { height:100%; display:flex; align-items:center; }
+    .core .cuerpo { padding:26px; }
+    .grid { grid-template-columns:1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <span class="badge">✓ A vásárlás megerősítve</span>
+    <h1>120 vizuális térkép elektronikai panelek hibáinak felderítéséhez</h1>
+    <p>Itt van minden, amit megvásároltál. Töltsd le, nyisd meg a képernyőn, vagy nyomtasd ki a munkapadra.</p>
+    <div class="stats"><span>120 térkép</span><span>6 modul</span><span>4 bónusz</span></div>
+  </div>
+</header>
+<main class="wrap">
+  <section class="core">
+    <div class="tapa"><img src="img/core.webp" width="960" height="678" alt="120 vizuális térkép elektronikai panelek hibáinak felderítéséhez"></div>
+    <div class="cuerpo">
+      <span class="tag">Főtermék</span>
+      <h2>120 vizuális térkép elektronikai panelek hibáinak felderítéséhez</h2>
+      <p>Minden térkép egy tünet egyetlen oldalon. Megnyitod a munkapadon, blokkokra bontod a NYÁK-ot, a jelölt pontokon mérsz, és összeveted a táblázattal.</p>
+      <a class="btn" href="120-terkep-panelhibak-felderitesehez.pdf" download="120-terkep-panelhibak-felderitesehez.pdf">⬇ PDF letöltése</a>
+      <a class="abrir" href="120-terkep-panelhibak-felderitesehez.pdf" target="_blank" rel="noopener">Megnyitás a böngészőben →</a>
+      <span class="meta">PDF · 132 oldal · 3,9 MB</span>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>A te 4 bónuszod</h2>
+    <div class="grid">
+
+      <div class="card">
+        <img src="img/bono-1.webp" width="96" height="136" alt="1. bónusz" loading="lazy">
+        <div>
+          <span class="n">1. bónusz</span>
+          <h3>Vizuális atlasz a panelhibák fizikai jeleiről</h3>
+          <p>Sok hiba már mérés előtt látszik. Ez az atlasz 19 fizikai jelet gyűjt össze: hogyan ismerd fel őket, melyik alkatrészre utalnak általában, és mit mérj a megerősítéshez.</p>
+        </div>
+        <div class="acciones">
+          <a class="btn" href="bonusz-1-hibajelek-atlasza.pdf" download="bonusz-1-hibajelek-atlasza.pdf">⬇ PDF letöltése</a>
+          <a class="abrir" href="bonusz-1-hibajelek-atlasza.pdf" target="_blank" rel="noopener">Megnyitás a böngészőben →</a>
+          <span class="meta">PDF · 23 oldal · 0,5 MB</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="img/bono-2.webp" width="96" height="136" alt="2. bónusz" loading="lazy">
+        <div>
+          <span class="n">2. bónusz</span>
+          <h3>30 panel-diagnosztikai eset magyarázattal</h3>
+          <p>Minden oldal egy teljes NYÁK egy valódi műhelyi hibával: mit csinált, mit néztek meg, mit mértek, és hol volt a hiba. Az egyszerűtől a nehézig haladnak.</p>
+        </div>
+        <div class="acciones">
+          <a class="btn" href="bonusz-2-30-diagnosztikai-eset.pdf" download="bonusz-2-30-diagnosztikai-eset.pdf">⬇ PDF letöltése</a>
+          <a class="abrir" href="bonusz-2-30-diagnosztikai-eset.pdf" target="_blank" rel="noopener">Megnyitás a böngészőben →</a>
+          <span class="meta">PDF · 33 oldal · 0,7 MB</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="img/bono-3.webp" width="96" height="136" alt="3. bónusz" loading="lazy">
+        <div>
+          <span class="n">3. bónusz</span>
+          <h3>Gyors útmutató: adatlapok, lábak és mérőpontok</h3>
+          <p>Ez az útmutató nem rajzolvasáshoz kell: megmutatja, milyen feszültséget várj az egyes lábakon, és hova tedd a csúcsokat a valódi NYÁK-on.</p>
+        </div>
+        <div class="acciones">
+          <a class="btn" href="bonusz-3-adatlapok-labak-es-meropontok.pdf" download="bonusz-3-adatlapok-labak-es-meropontok.pdf">⬇ PDF letöltése</a>
+          <a class="abrir" href="bonusz-3-adatlapok-labak-es-meropontok.pdf" target="_blank" rel="noopener">Megnyitás a böngészőben →</a>
+          <span class="meta">PDF · 19 oldal · 0,5 MB</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="img/bono-4.webp" width="96" height="136" alt="4. bónusz" loading="lazy">
+        <div>
+          <span class="n">4. bónusz</span>
+          <h3>Biztonsági és előkészítési ellenőrzőlista a panel-diagnosztikához</h3>
+          <p>NYÁK megnyitása és minden bekapcsolás előtt nézd át a megfelelő oldalt. Így nem veszíted el az eredeti hibát, és nem okozol újat.</p>
+        </div>
+        <div class="acciones">
+          <a class="btn" href="bonusz-4-diagnosztikai-biztonsagi-ellenorzolista.pdf" download="bonusz-4-diagnosztikai-biztonsagi-ellenorzolista.pdf">⬇ PDF letöltése</a>
+          <a class="abrir" href="bonusz-4-diagnosztikai-biztonsagi-ellenorzolista.pdf" target="_blank" rel="noopener">Megnyitás a böngészőben →</a>
+          <span class="meta">PDF · 13 oldal · 0,4 MB</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Hol kezdd</h2>
+    <ol class="pasos">
+      <li>Töltsd le az 5 PDF-et, és mentsd el a telefonodra vagy a számítógépedre.</li>
+      <li>Ha még sosem diagnosztizáltál NYÁK-ot, olvasd el az egész 1. modult: ott van a módszer, amelyre az összes többi térkép épül.</li>
+      <li>Ha már tudod, mit csinál a készülék, keresd meg a tünetet a tartalomjegyzékben: nem kapcsol be (2. modul), kapcsolóüzemű táp (3. modul), bekapcsol, de nem működik (4. modul), egy kimenet nem működik (5. modul), vagy a hiba jön-megy (6. modul).</li>
+    </ol>
+  </section>
+
+  <section class="sec">
+    <div class="nota"><h3>Mentsd el ezt a linket</h3><p>Ez az oldal bármikor hozzáférést ad az anyaghoz.</p></div>
+  </section>
+
+  <section class="proximo">
+    <h2>Következő lépés</h2>
+    <p>A módszer a tiéd. A következő lépés, hogy használd: vegyél elő egy félretett NYÁK-ot, kezdd az 1. térképpel, és kövesd a tünet útját lépések kihagyása nélkül.</p>
+  </section>
+</main>
+<footer class="pie">©️ Minden jog fenntartva.</footer>
+</body>
+</html>
